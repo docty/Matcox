@@ -1,0 +1,28 @@
+## Defining Our Own Notes ##
+
+
+
+
+^  :   Start Of A String
+$  :   End Of A String
+.  :   Matches All String
+[] :   Defines Range
++  :   Matches One Or More
+*  :   Matches Zero Or More
+?  :   Matches Zero Or One
+{} :   Matches Exact Number
+|  :   Mathes Either
+
+
+
+w  :  Matches Word String
+W  :  Matches Non-Word String
+s  :  Matches Space String
+S  :  Matches Non-Space String
+d  :  Matches Digits
+D  :  Matches Non-Digits
+z  :  Matches End Of A String
+A  :  Matches Beginning Of A String
+
+w+ :   Alphanumeric character in the string
+s  :  Creating a space in the string
