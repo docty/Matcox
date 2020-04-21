@@ -1,22 +1,23 @@
-from PyQt5 import QtWidgets
-
-from gui.mainscreen import Ui_MainWindow  # importing our generated file
-
 import sys
+from PyQt5 import QtWidgets
+from view.homescreen import Ui_MainWindow   
+from controller.home import HomeController 
 
 
 
 
-file = open('./board.mc', 'r')
-text = file.read()
-file.close()
 
 
 
 
-app = QtWidgets.QApplication([])
-window = QtWidgets.QMainWindow()
-ui = Ui_MainWindow()
-ui.setupUi(window, text)
+
+app = QtWidgets.QApplication([]) # Initialise The Application
+window = QtWidgets.QMainWindow() # Initialise The Window
+ui = Ui_MainWindow()             # Initialise The Main View
+ui.setupUi(window)         # Setup The Uis
+hc = HomeController(ui)          # Initialise The Home Controller
+hc.registerEvents()              # Register All Events
 window.show()
-sys.exit(app.exec()) 
+sys.exit(app.exec())
+
+
