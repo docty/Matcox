@@ -48,7 +48,7 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>play_48px.png</normaloff>play_48px.png</iconset>
+          <normaloff>../asset/run.png</normaloff>../asset/run.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -92,7 +92,7 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>broom_48px.png</normaloff>broom_48px.png</iconset>
+          <normaloff>../asset/clear.png</normaloff>../asset/clear.png</iconset>
         </property>
         <property name="iconSize">
          <size>
@@ -138,7 +138,7 @@
         <number>1</number>
        </property>
        <property name="currentIndex">
-        <number>1</number>
+        <number>0</number>
        </property>
        <property name="tabSpacing">
         <number>3</number>
@@ -173,6 +173,9 @@
          </property>
          <item>
           <widget class="QListWidget" name="function">
+           <property name="viewMode">
+            <enum>QListView::ListMode</enum>
+           </property>
            <item>
             <property name="text">
              <string>Base</string>
@@ -291,7 +294,7 @@
          </sizepolicy>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <widget class="QWidget" name="tab_5">
          <attribute name="title">
@@ -369,6 +372,41 @@ p, li { white-space: pre-wrap; }
           </item>
          </layout>
         </widget>
+        <widget class="QWidget" name="tab_7">
+         <attribute name="title">
+          <string>Output</string>
+         </attribute>
+         <widget class="QFrame" name="frame">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>-1</y>
+            <width>900</width>
+            <height>500</height>
+           </rect>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>900</width>
+            <height>500</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <layout class="QVBoxLayout" name="outputLayout"/>
+           </item>
+          </layout>
+         </widget>
+        </widget>
        </widget>
       </widget>
       <widget class="QFrame" name="right">
@@ -387,6 +425,23 @@ p, li { white-space: pre-wrap; }
        <property name="frameShadow">
         <enum>QFrame::Raised</enum>
        </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5">
+        <property name="leftMargin">
+         <number>1</number>
+        </property>
+        <property name="topMargin">
+         <number>1</number>
+        </property>
+        <property name="rightMargin">
+         <number>1</number>
+        </property>
+        <property name="bottomMargin">
+         <number>1</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" name="rightLayout"/>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -394,22 +449,5 @@ p, li { white-space: pre-wrap; }
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>function</sender>
-   <signal>currentTextChanged(QString)</signal>
-   <receiver>textBoard</receiver>
-   <slot>insertPlainText(QString)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>191</x>
-     <y>219</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>354</x>
-     <y>187</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

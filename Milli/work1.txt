@@ -1,0 +1,9 @@
+
+   
+#self.window.labelDisplay.setText(str(self.equ))
+x = Symbol('x')
+        self.equ = Integral(sqrt(1/x), x)
+
+         
+        # code = ast.parse(str(self.equ), mode='eval')
+        # self.data = eval(compile(code, '', mode='eval'))
