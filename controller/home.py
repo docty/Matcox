@@ -1,12 +1,13 @@
 
 from mcomp import main
-
+from sympy import *
+import ast
 class HomeController:
 
 
 
    
-
+#self.window.labelDisplay.setText(str(self.equ))
 
     def __init__(self, window):
         ### Read Data From Board  ###
@@ -14,13 +15,20 @@ class HomeController:
         self.text = file.read()
         file.close()
         self.window = window
-        
+        x = Symbol('x')
+        init_printing()
+        self.equ = Integral(sqrt(1/x), x)
+        # code = ast.parse(str(self.equ), mode='eval')
+        # self.data = eval(compile(code, '', mode='eval'))
+         
         
      
 
     def registerEvents(self):
         self.window.btnRun.clicked.connect(self.writeToBoard)
         self.window.textBoard.setText(self.text)
+         
+        
          
 
 
@@ -31,15 +39,17 @@ class HomeController:
         fy = open('./board.mc', 'r')
         
         output = main.callRunner()
-         
-        if type(output).__name__ == 'str': 
-            self.window.textOutput.setText(output)
-        elif type(output).__name__ == 'NoneType': 
-            self.window.textOutput.setText(output)
+        filetype =  type(output).__name__
+        
+        if filetype == 'str' : 
+            self.window.textMessage.setText(output.errorMessage)
+        elif filetype == 'ErrorTask':
+            self.window.textMessage.setText(output.errorMessage+'; '+ output.errorValue)
         else:
+            print(output)
             n = ''
             for i in output:
                 n = n+str(i)
-            self.window.textOutput.setText(n)
+            self.window.textMessage.setText(n)
         
         fy.close()

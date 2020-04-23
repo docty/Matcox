@@ -1,3 +1,4 @@
+
 try: 
     from lexer import Lexer
     from passer import Passer
@@ -23,18 +24,17 @@ def run():
     token, error = lex.tokenize()
     
     if (token is  None):
-        print(error)
+        return error
     else:
         passer = Passer(token)
         rule, error = passer.grammar()
 
         if rule is None:
-            print(error)
+            return error
         else:
             if(token[0].value == 'solve') :
                 eva = Evaluate(rule[2:])
                 return eva.useCaseTest()
-                # print(eva.expression())
             elif (token[0].value == 'base') :
                 bases = Base(rule[2:])
                 return bases.results()
