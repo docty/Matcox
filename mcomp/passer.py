@@ -4,15 +4,17 @@ Created on Fri Apr 17 14:08:40 2020
 
 @author: Lenovo G50
 """
-
+import re
 try:
     from reserved import res_word
     from error import ErrorTask
     import constant
+    from  tokena import Token
 except ImportError:
     from .reserved import res_word
     from .error import ErrorTask
     from . import constant
+    from  .tokena import Token
 
 class Passer:
     
@@ -26,7 +28,7 @@ class Passer:
   
         
     def grammar(self):
-         
+        
         resWord = self.checkReservedWord()
          
         if type(resWord).__name__ == 'ErrorTask':
@@ -35,9 +37,10 @@ class Passer:
         cury = self.checkCury()
          
         if type(cury).__name__ == 'ErrorTask':
-            return None, cury;
+            return None, cury
         
         if resWord == 'solve':
+            
             express = self.checkExpression()
             if type(express).__name__ == 'ErrorTask':
                 return None, express
@@ -84,11 +87,19 @@ class Passer:
         
     
     def checkExpression(self):
-        while self.currentToken._type in (constant.INT, constant.PLUS, constant.MINUS, constant.MUL, constant.DIV, constant.CARET):
+        length = len(self.tokens) - 3
+        i  = 1
+        
+        while i <= length:
+            
+            if self.currentToken.value in ['{', '}'] or re.match(r'[a-z]', self.currentToken.value) :
+                return ErrorTask('Syntax Error',  self.currentToken.value)
             self.getNextToken()
-            if self.currentToken._type == constant.RCURY:
-                return None
-        return ErrorTask('Syntax Error', '') 
+            i = i+1
+
+        return None
+       
+         
     
     
     def checkBase(self):

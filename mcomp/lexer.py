@@ -9,12 +9,12 @@ import re
 try: 
     from error import ErrorTask
     from  tokena import Token
-    from reserved  import res_word
+    from reserved  import res_word, symbol_name
     import constant
 except ImportError:
     from .error import ErrorTask
     from  .tokena import Token
-    from .reserved  import res_word
+    from .reserved  import res_word, symbol_name
     from . import constant
  
 class Lexer:
@@ -75,6 +75,8 @@ class Lexer:
              
         if n in res_word:
             return Token('Reserved', n)
+        elif n in symbol_name:
+            return Token('Symbol', n)
         else:
             return Token('Var', n)
 

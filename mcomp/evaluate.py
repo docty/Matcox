@@ -30,35 +30,17 @@ class Evaluate:
         self.currentToken = self.tokens[self.pos]
         
         
-    def expression(self):
-         
-        result = self.term()
-         
-        while self.currentToken._type in (constant.PLUS, constant.MINUS) :
-            left = self.currentToken
-            if left._type == constant.PLUS:
-                self.getNextToken()
-                result = result + self.term()
-            elif left._type == constant.MINUS:
-                self.getNextToken()
-                result = result - self.term()
-            
-         
-        return result
     
-    
-    def term(self):
-        token  = self.currentToken
-         
-        if token._type == constant.INT:
-            self.getNextToken()
-            return int(token.value)
-        
         
     def useCaseTest(self):
         data=''
+        answer = 0
         for item in self.tokens:
-            data = data+item.value
+                data = data+item.value
+        i = 1
+        while i <= len(self.tokens):
+            if self.tokens[i-1]._type == 'INT':
+                answer = sym.sympify(sym.sqrt(int(self.tokens[i-1].value)))
+            i += 1
         
-        result = sym.sympify(str(data[:-1]))
-        return [result]
+        return [answer]

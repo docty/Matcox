@@ -2,13 +2,15 @@
 try: 
     from lexer import Lexer
     from passer import Passer
-    from evaluate import Evaluate
+    from solve import Solve
     from base import Base
+    from evaluate import Evaluate
 except ImportError:
     from .lexer import Lexer
     from .passer import Passer
-    from .evaluate import Evaluate
+    from .solve import Solve
     from .base import Base
+    from .evaluate import Evaluate
 
 
 
@@ -16,8 +18,12 @@ except ImportError:
 
 def run():
      
-    file = open('./board.mc', 'r')
-    text = file.read()
+    try:
+        file = open('./board.mc', 'r')
+        text = file.read()
+    except FileNotFoundError :
+        file = open('../board.mc', 'r')
+        text = file.read()
     file.close()
 
     lex = Lexer(text)
@@ -28,17 +34,20 @@ def run():
     else:
         passer = Passer(token)
         rule, error = passer.grammar()
-
+        
         if rule is None:
             return error
         else:
             
             if(token[0].value == 'solve') :
-                eva = Evaluate(rule[2:])
-                return eva.useCaseTest()
+                sol = Solve(rule[2:])
+                return sol.useCaseTest()
             elif (token[0].value == 'base') :
                 bases = Base(rule[2:])
                 return bases.results()
+            elif (token[0].value == 'evaluate') :
+                eva = Evaluate(rule[2:-1])
+                return eva.useCaseTest()
     
 
 
