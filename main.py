@@ -16,6 +16,6 @@ ui.setupUi(window)               # Setup The Uis
 hc = HomeController(ui)          # Initialise The Home Controller
 hc.registerEvents()              # Register All Events
 window.show()
-sys.exit(app.exec())
+app.exec_()
 
 

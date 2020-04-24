@@ -1,7 +1,6 @@
 
 from mcomp import main
 from PyQt5 import QtCore
-from sympy import *
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 
