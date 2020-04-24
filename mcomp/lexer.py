@@ -51,7 +51,7 @@ class Lexer:
             elif self.currentChar in ['{', '}', '(', ')']:
                 result.append(self.bracket(self.currentChar))
                 self.getNextChar()
-            elif self.currentChar in ['+', '-', '*', '/']:
+            elif self.currentChar in ['+', '-', '*', '/', '^']:
                 result.append(self.operationSign(self.currentChar))
                 self.getNextChar()
             elif self.currentChar == '=':
@@ -100,8 +100,10 @@ class Lexer:
             return Token(constant.MINUS, sign)
         elif sign == '*':
             return Token(constant.MUL, sign)
+        elif sign == '/':
+            return Token(constant.DIV, sign)
         else:
-            return Token(constant.MUL, sign)
+            return Token(constant.CARET, sign)
         
     def bracket(self, symbol):
         if symbol == '{':

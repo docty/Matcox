@@ -32,6 +32,7 @@ def run():
         if rule is None:
             return error
         else:
+            
             if(token[0].value == 'solve') :
                 eva = Evaluate(rule[2:])
                 return eva.useCaseTest()

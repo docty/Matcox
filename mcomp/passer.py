@@ -84,7 +84,7 @@ class Passer:
         
     
     def checkExpression(self):
-        while self.currentToken._type in (constant.INT, constant.PLUS, constant.MINUS, constant.MUL, constant.DIV):
+        while self.currentToken._type in (constant.INT, constant.PLUS, constant.MINUS, constant.MUL, constant.DIV, constant.CARET):
             self.getNextToken()
             if self.currentToken._type == constant.RCURY:
                 return None

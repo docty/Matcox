@@ -5,8 +5,8 @@ Created on Fri Apr 17 19:29:56 2020
 @author: Lenovo G50
 """
 
-import ast
 
+import sympy as sym
 
 
 
@@ -60,5 +60,5 @@ class Evaluate:
         for item in self.tokens:
             data = data+item.value
         
-        tree = ast.parse(str(data[:-1]), mode='eval')
-        return [eval(compile(tree, '', mode='eval'))]
+        result = sym.sympify(str(data[:-1]))
+        return [result]

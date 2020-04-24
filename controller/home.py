@@ -25,6 +25,8 @@ class HomeController:
         self.canvas.setMinimumSize(QtCore.QSize(268, 0))
         self.window.function.itemClicked.connect(self.itemFunction)
         self.window.textBoard.textChanged.connect(self.boardText)
+        self.window.btnClear.clicked.connect(self.clearBoard)
+        self.symbolsEvent()
          
         
     def run(self):
@@ -34,10 +36,20 @@ class HomeController:
         self.Read_Write_Board()
         ## Run Engine  ##
         self.runEngine()
-        
+
+
+    def symbolsEvent(self):
+        self.window.btnFraction.clicked.connect(lambda : self.window.textBoard.insertPlainText('fraction{a}{b}'))  
+        self.window.btnSubscript.clicked.connect(lambda : self.window.textBoard.insertPlainText('a_{b}'))  
+        self.window.btnSuperscript.clicked.connect(lambda : self.window.textBoard.insertPlainText('a^{b}'))  
+        self.window.btnSquare.clicked.connect(lambda : self.window.textBoard.insertPlainText('root{a}'))  
+
         
     def boardText(self):
-        print('gf')
+        pass
+
+    def clearBoard(self):
+        self.window.textBoard.clear()
 
     def itemFunction(self, item):
         functionName = '<span style="color:#2A7FFF">'+item.text().lower()+'</span>'

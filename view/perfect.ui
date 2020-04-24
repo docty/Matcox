@@ -138,7 +138,7 @@
         <number>1</number>
        </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <property name="tabSpacing">
         <number>3</number>
@@ -148,7 +148,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>270</width>
+          <width>258</width>
           <height>363</height>
          </rect>
         </property>
@@ -213,9 +213,12 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>270</width>
+          <width>258</width>
           <height>363</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(255, 255, 255);</string>
         </property>
         <attribute name="label">
          <string>Symbols</string>
@@ -233,17 +236,80 @@
          <property name="bottomMargin">
           <number>1</number>
          </property>
-         <item row="0" column="0">
-          <widget class="QPushButton" name="subscript">
+         <item row="0" column="2">
+          <widget class="QPushButton" name="btnSuperscript">
            <property name="text">
-            <string>Subscript</string>
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../asset/superscript.PNG</normaloff>../asset/superscript.PNG</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>31</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
-         <item row="0" column="1">
-          <widget class="QPushButton" name="superscript">
+         <item row="0" column="0">
+          <widget class="QPushButton" name="btnSubscript">
+           <property name="icon">
+            <iconset>
+             <normaloff>../asset/subscript.PNG</normaloff>../asset/subscript.PNG</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="3">
+          <widget class="QPushButton" name="btnSquare">
            <property name="text">
-            <string>Superscript</string>
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../asset/square.PNG</normaloff>../asset/square.PNG</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>30</width>
+             <height>30</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="btnFraction">
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../asset/fraction.PNG</normaloff>../asset/fraction.PNG</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>35</width>
+             <height>35</height>
+            </size>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
