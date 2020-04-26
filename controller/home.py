@@ -51,7 +51,8 @@ class HomeController:
         self.window.textBoard.clear()
 
     def itemFunction(self, item):
-        functionName = '<span style="color:#2A7FFF">'+item.text().lower()+'</span>'
+        item = item.text().replace(' ', '')
+        functionName = '<span style="color:#2A7FFF">'+item.lower()+'</span>'
         functionName = functionName+'<span style="color:#FF7F55">{</span> <span style="font-style:italic">type here</span> <span style="color:#FF7F55">}</span/>'
         self.window.textBoard.setText(functionName)
         

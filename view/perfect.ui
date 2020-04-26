@@ -148,7 +148,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>226</width>
+          <width>258</width>
           <height>363</height>
          </rect>
         </property>
@@ -209,6 +209,11 @@
              <string>Solve</string>
             </property>
            </item>
+           <item>
+            <property name="text">
+             <string>Standard Form</string>
+            </property>
+           </item>
           </widget>
          </item>
         </layout>
@@ -218,7 +223,7 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>226</width>
+          <width>258</width>
           <height>363</height>
          </rect>
         </property>
