@@ -5,12 +5,14 @@ try:
     from solve import Solve
     from base import Base
     from evaluate import Evaluate
+    from standardform import Standardform
 except ImportError:
     from .lexer import Lexer
     from .passer import Passer
     from .solve import Solve
     from .base import Base
     from .evaluate import Evaluate
+    from .standardform import Standardform
 
 
 
@@ -48,6 +50,9 @@ def run():
             elif (token[0].value == 'evaluate') :
                 eva = Evaluate(rule[2:-1])
                 return eva.useCaseTest()
+            elif (token[0].value == 'standardform') :
+                sdform = Standardform(rule[2:-1])
+                return sdform.results()
     
 
 
