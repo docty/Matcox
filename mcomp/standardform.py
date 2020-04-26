@@ -4,7 +4,9 @@ Created on Sat Apr 18 16:18:37 2020
 
 @author: Lenovo G50
 """
-# Example base{25,10, 2}
+# Example standardform{235461}
+
+import sympy as sym
 
 class Standardform:
     
@@ -23,10 +25,15 @@ class Standardform:
         
         
     def results(self):
-        number =  self.tokens[0].value
-        index=0
-        
-        if self.tokens[0]._type == 'FLOAT':
+        number =  ''; index=0
+        for item in self.tokens:
+            number = number+item.value
+        try:
+            number = str(sym.sympify(number))
+        except sym.SympifyError:
+            return ['Expression Is Incorrect']
+        print(number)
+        if number.__contains__('.'):
             if number[0] == '0':
                 number = number.replace('.', '')
                 while number[0] == '0':
@@ -36,9 +43,9 @@ class Standardform:
             else:
                 index  = number.index('.')
                 number = number.replace('.', '')
-                while number[-1] == '0':
-                    number = number[:-1]
                 counter = index-1
+            while number[-1] == '0':
+                    number = number[:-1]
             result = number[0]+'.'+ number[1:]+'x10^{'+str(counter)+'}' 
         else:
             oldNumber = number

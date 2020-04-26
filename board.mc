@@ -1,1 +1,1 @@
-standardform{ 65.050 }
+factorise{ x^2+5x+6 }

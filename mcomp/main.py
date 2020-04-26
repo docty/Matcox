@@ -6,6 +6,7 @@ try:
     from base import Base
     from evaluate import Evaluate
     from standardform import Standardform
+    from factorise import Factorise
 except ImportError:
     from .lexer import Lexer
     from .passer import Passer
@@ -13,6 +14,7 @@ except ImportError:
     from .base import Base
     from .evaluate import Evaluate
     from .standardform import Standardform
+    from .factorise import Factorise
 
 
 
@@ -53,6 +55,9 @@ def run():
             elif (token[0].value == 'standardform') :
                 sdform = Standardform(rule[2:-1])
                 return sdform.results()
+            elif (token[0].value == 'factorise') :
+                factor = Factorise(rule[2:-1])
+                return factor.results()
     
 
 
