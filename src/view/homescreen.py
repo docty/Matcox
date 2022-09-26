@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'perfect.ui'
+# Form implementation generated from reading ui file 'src/view/perfect.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -24,33 +24,9 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.splitter = QtWidgets.QSplitter(self.centralwidget)
-        self.splitter.setOrientation(QtCore.Qt.Horizontal)
-        self.splitter.setChildrenCollapsible(False)
-        self.splitter.setObjectName("splitter")
-        self.middle = QtWidgets.QSplitter(self.splitter)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(1)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.middle.sizePolicy().hasHeightForWidth())
-        self.middle.setSizePolicy(sizePolicy)
-        self.middle.setOrientation(QtCore.Qt.Vertical)
-        self.middle.setChildrenCollapsible(False)
-        self.middle.setObjectName("middle")
-        self.textBoard = QtWidgets.QTextEdit(self.middle)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Minimum)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.textBoard.sizePolicy().hasHeightForWidth())
-        self.textBoard.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setFamily("Times New Roman")
-        font.setPointSize(12)
-        self.textBoard.setFont(font)
-        self.textBoard.setFrameShape(QtWidgets.QFrame.Box)
-        self.textBoard.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.textBoard = QtWidgets.QTextEdit(self.centralwidget)
         self.textBoard.setObjectName("textBoard")
-        self.gridLayout_2.addWidget(self.splitter, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.textBoard, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menuBar = QtWidgets.QMenuBar(MainWindow)
         self.menuBar.setGeometry(QtCore.QRect(0, 0, 1053, 21))
@@ -93,7 +69,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Matcox"))
-        self.textBoard.setPlaceholderText(_translate("MainWindow", "Writing Board"))
         self.menu_File.setTitle(_translate("MainWindow", "&File"))
         self.menu_Tools.setTitle(_translate("MainWindow", "&Tools"))
         self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar"))

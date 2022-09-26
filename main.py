@@ -1,8 +1,7 @@
-#import sys
-
+import sys
 from PyQt5 import QtWidgets
-from view.homescreen import Ui_MainWindow   
-from controller.home import HomeController 
+from src.view.homescreen import Ui_MainWindow   
+from src.controller.home import HomeController 
 
 
 
@@ -16,6 +15,6 @@ ui.setupUi(window)               # Setup The Uis
 hc = HomeController(ui)          # Initialise The Home Controller
 hc.registerEvents()              # Register All Events
 window.show()
-app.exec_()
+sys.exit(app.exec_())
 
 

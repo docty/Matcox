@@ -1,2 +1,3 @@
-### Converting QtDesigner to Python
- pyuic5 -x perfect.ui -o homescreen.py 
+# Matcox GUI
+The Matcox GUI is the offical standalone application to create your mx files.
+

@@ -5,11 +5,8 @@ from PyQt5 import QtCore, QtWidgets
 class HomeController:
 
     def __init__(self, window):
-        self.window = window 
-        file = open('./board.mx', 'r')
-        self.text = file.read()
-        file.close()
-        
+        self.window = window
+        self.text = ""
        
     def registerEvents(self): 
         self.window.textBoard.setText(self.text)
