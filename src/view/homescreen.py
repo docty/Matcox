@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'src/view/perfect.ui'
+# Form implementation generated from reading ui file 'perfect.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.7
 #
@@ -24,9 +24,28 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.centralwidget)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.textBoard = QtWidgets.QTextEdit(self.centralwidget)
-        self.textBoard.setObjectName("textBoard")
-        self.gridLayout_2.addWidget(self.textBoard, 0, 0, 1, 1)
+        self.horizontalLayout = QtWidgets.QHBoxLayout()
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.tabWidget = QtWidgets.QTabWidget(self.centralwidget)
+        self.tabWidget.setTabPosition(QtWidgets.QTabWidget.North)
+        self.tabWidget.setTabShape(QtWidgets.QTabWidget.Rounded)
+        self.tabWidget.setElideMode(QtCore.Qt.ElideNone)
+        self.tabWidget.setTabsClosable(True)
+        self.tabWidget.setMovable(True)
+        self.tabWidget.setTabBarAutoHide(False)
+        self.tabWidget.setObjectName("tabWidget")
+        self.tab = QtWidgets.QWidget()
+        self.tab.setEnabled(True)
+        self.tab.setObjectName("tab")
+        self.plainTextEdit = QtWidgets.QPlainTextEdit(self.tab)
+        self.plainTextEdit.setGeometry(QtCore.QRect(0, 0, 1031, 481))
+        self.plainTextEdit.setObjectName("plainTextEdit")
+        self.tabWidget.addTab(self.tab, "")
+        self.tab_2 = QtWidgets.QWidget()
+        self.tab_2.setObjectName("tab_2")
+        self.tabWidget.addTab(self.tab_2, "")
+        self.horizontalLayout.addWidget(self.tabWidget)
+        self.gridLayout_2.addLayout(self.horizontalLayout, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menuBar = QtWidgets.QMenuBar(MainWindow)
         self.menuBar.setGeometry(QtCore.QRect(0, 0, 1053, 21))
@@ -64,11 +83,14 @@ class Ui_MainWindow(object):
         self.toolBar.addAction(self.actionRun)
 
         self.retranslateUi(MainWindow)
+        self.tabWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Matcox"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), _translate("MainWindow", "Tab 1"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_2), _translate("MainWindow", "Tab 2"))
         self.menu_File.setTitle(_translate("MainWindow", "&File"))
         self.menu_Tools.setTitle(_translate("MainWindow", "&Tools"))
         self.toolBar.setWindowTitle(_translate("MainWindow", "toolBar"))
